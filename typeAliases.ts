@@ -12,6 +12,12 @@ function createUser(user: User): User {
   };
 }
 
-createUser({ name: "Shridhar", age: 22, email: "shri@gmail.com" });
+const user: User = {
+  name: "Shridhar",
+  age: 22,
+  email: "shri@gmail.com",
+};
+
+createUser(user);
 
 export {};

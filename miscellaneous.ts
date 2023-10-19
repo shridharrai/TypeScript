@@ -11,7 +11,7 @@ let user: User = {
   isActive: true,
 };
 
-// user._id = '234' -> not allowed as id is readOnly
+// user._id = '234'
 user.isActive = false;
 
 // using existing defined types via intersections(can say like inheritence of types)

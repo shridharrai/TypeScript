@@ -1,5 +1,5 @@
 function getId(id: string | number | null | undefined) {
-  // id.toLowerCase(); -> not working as union creates a new type
+  // id.toLowerCase();
   if (typeof id === "string") id.toLowerCase();
 
   console.log("Id is ", id);
@@ -7,6 +7,7 @@ function getId(id: string | number | null | undefined) {
 
 getId(1);
 getId("3");
+// getId(false);
 
 // Union in array
 const arr: number[] = [1, 2, 3];
@@ -18,19 +19,23 @@ const mixedArr: (number | string)[] = [1, "shr", "wer"];
 type User = {
   id: string;
   name: string;
+  phone: number;
 };
 
 type Admin = {
   id: string;
   userName: string;
+  isActive: boolean;
 };
 
-let user: User | Admin = {
+let user: Admin | User = {
   id: "123",
   name: "Shridhar",
+  userName: "Rai",
+  isActive: false,
 };
 
-user = { userName: "Shridhar Rai", id: "1234" };
+// user = { userName: "Shridhar Rai", id: "1234" };
 
 // defininig a list of possible constant values using union
 let usertype: "BUYER" | "SELLER" | "ADMIN";
